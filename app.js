@@ -42,7 +42,7 @@ formulario.addEventListener("submit", function (e) {
 function agregarHTML(bbdd) {
   limpiarHTML();
 
-  bbdd.forEach((inventario) => {
+  bbdd.forEach((inventario, index) => {
     const { nombre, descripcion, precio, img } = inventario;
 
     const nombreHTML = document.createElement("H3");
@@ -71,6 +71,7 @@ function agregarHTML(bbdd) {
     btnEditar.textContent = "EDITAR";
     btnEditar.type = "button";
     btnEditar.classList.add("btn__editar");
+    btnEditar.dataset.index = index;
 
     const btnEliminar = document.createElement("BUTTON");
     btnEliminar.textContent = "ELIMINAR";
@@ -91,6 +92,17 @@ function agregarHTML(bbdd) {
     pastelHTML.appendChild(botones__contenedor);
 
     resultado.appendChild(pastelHTML);
+
+    // Listener de eventos para el botón "Editar"
+    btnEditar.addEventListener("click", () => {
+      formulario.querySelector(".nombre").value = nombre;
+      formulario.querySelector(".precio").value = precio;
+      formulario.querySelector(".descripcion").value = descripcion;
+      formulario.querySelector(".img").value = img;
+      formulario.dataset.index = index;
+      btnAgregar.textContent = "EDITAR";
+    });
+    btnAgregar.textContent = "AGREGAR";
   });
 }
 // LIMPIAR EL HTML
