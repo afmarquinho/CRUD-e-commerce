@@ -101,11 +101,12 @@ function agregarHTML(bbdd) {
       formulario.querySelector(".img").value = img;
       formulario.dataset.index = index;
       btnAgregar.textContent = "EDITAR";
+      inventarioBBDD = inventarioBBDD.filter(objeto => objeto !== inventario);
     });
     btnAgregar.textContent = "AGREGAR";
   });
 }
-// LIMPIAR EL HTML
+// LIMPIAR HTML
 function limpiarHTML() {
   while (resultado.firstChild) {
     resultado.removeChild(resultado.firstChild);
