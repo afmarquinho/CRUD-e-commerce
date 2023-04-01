@@ -1,0 +1,99 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;900&display=swap');
+
+
+:root {
+    --primario: #6f0dee6c;
+    --secundario: #6f0dee0e;
+    --fuentePrincipal: 'Poppins', sans-serif;
+}
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: var(--fuentePrincipal);
+    font-size: 1.4rem;
+    line-height: 1.8;
+}
+h1, h2, h3, h4 {
+    font-weight: 900;
+}
+h1 {
+    font-size: 5rem;
+}
+h2 {
+    font-size: 3rem;
+}
+h3 {
+    font-size: 2.5rem;
+    margin: 1rem auto;
+    text-transform: uppercase;
+    background-color: var(--primario);
+    color:#360379
+}
+h4 {
+    font-size: 2rem;
+    margin: 0 auto 1rem auto;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* UTLIDADES */
+.text__center{
+    text-align: center;
+}
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.section__container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.pastel__container{
+    padding: 1rem;
+    width: 100%;
+    max-width: 20rem;
+    margin: 0.5rem;
+}
+.info{
+    background-color: var(--secundario);
+}
+.desc{
+    margin: 1rem auto;
+}
+.botones__contenedor{
+    display: flex;
+    justify-content: space-around;
+}
+.btn__editar{
+    color:blue;
+    font-weight: 900;
+    background-color: transparent;
+    border: none;
+}
+.btn__editar:hover{
+    color: black;
+    cursor: pointer;
+
+}.btn__eliminar{
+    color:rgb(255, 0, 0);
+    font-weight: 900;
+    background-color: transparent;
+    border: none;
+}
+.btn__eliminar:hover{
+    color: rgb(168, 2, 2);
+    cursor: pointer;
+}
