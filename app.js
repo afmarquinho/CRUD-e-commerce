@@ -5,6 +5,7 @@ const formulario = document.querySelector(".formulario");
 const btnEditar = document.querySelector(".btn__editar");
 const btnEliminar = document.querySelector(".btn__eliminar");
 
+
 // EVENTOS
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -20,7 +21,8 @@ formulario.addEventListener("submit", function (e) {
   const descripcion = formulario.querySelector(".descripcion").value;
   const img = formulario.querySelector(".img").value;
 
-  const nuevoProducto = { nombre, precio, descripcion, img };
+  let nuevoProducto = { nombre, precio, descripcion, img, key:aleatorio2()};
+
   // Validar que el objeto no tenga valores vacíos
   let objetoCompleto = true;
   for (let propiedad in nuevoProducto) {
@@ -101,14 +103,29 @@ function agregarHTML(bbdd) {
       formulario.querySelector(".img").value = img;
       formulario.dataset.index = index;
       btnAgregar.textContent = "EDITAR";
-      inventarioBBDD = inventarioBBDD.filter(objeto => objeto !== inventario);
+      inventarioBBDD = inventarioBBDD.filter((objeto) => objeto !== inventario);
     });
     btnAgregar.textContent = "AGREGAR";
+    btnEliminar.addEventListener("click", function () {
+      console.log(inventarioBBDD);
+      let inventarioFiltrado = inventarioBBDD.filter((filter) => {
+        return filter.key !== inventario.key;
+      });
+      inventarioBBDD = inventarioFiltrado;
+      agregarHTML(inventarioBBDD);
+    });
   });
 }
+
 // LIMPIAR HTML
 function limpiarHTML() {
   while (resultado.firstChild) {
     resultado.removeChild(resultado.firstChild);
   }
 }
+
+function aleatorio2() {
+  const key = Date.now().toString(36);
+  const random = Math.random().toString(36).substring(2);
+  return key + random;
+  }

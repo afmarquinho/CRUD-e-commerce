@@ -8,10 +8,13 @@
     <title>e-commerce</title>
   </head>
   <body>
-    <form action="" class="formulario">
-      <h2>Inventario</h2>
+    <div class="formulario__contenedor">
+
+      <form action="" class="formulario">
+        <h2 class="text__center">Inventario</h2>
       <div class="div" class="input__nombre">
-        <input type="text" placeholder="Ingrese Nombre" class="nombre"/>
+        <label for="nombre">Nombre</label>
+        <input type="text" placeholder="Ingrese Nombre" class="nombre" name="nombre"/>
       </div>
       <div class="div" class="input precio">
         <input type="text" placeholder="Ingrese Precio" class="precio" />
@@ -24,7 +27,8 @@
       </div>
       <button type="submit" class="btn__agregar">AGREGAR</button>
     </form>
-
+  </div>
+    
     <section>
       <div class="section__container contenedor"></div>
     </section>
