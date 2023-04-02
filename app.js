@@ -115,6 +115,7 @@ function agregarHTML(bbdd) {
       agregarHTML(inventarioBBDD);
     });
   });
+  localStorage.setItem('inventarioBBDD', JSON.stringify(inventarioBBDD))
 }
 
 // LIMPIAR HTML
